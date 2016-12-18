@@ -11,7 +11,7 @@ public class SignUpProcessTest {
 		String exepath="C:\\chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", exepath);
 		WebDriver driver =new ChromeDriver();
-		driver.get("https://accounts.google.com/");
+		driver.get ("https://accounts.google.com/");
 	}
 
 }
