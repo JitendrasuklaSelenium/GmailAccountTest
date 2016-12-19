@@ -12,6 +12,7 @@ public class SignUpProcessTest {
 		System.setProperty("webdriver.chrome.driver", exepath);
 		WebDriver driver =new ChromeDriver();
 		driver.get ("https://accounts.google.com/");
+		driver.manage().window().maximize();
 	}
 
 }
