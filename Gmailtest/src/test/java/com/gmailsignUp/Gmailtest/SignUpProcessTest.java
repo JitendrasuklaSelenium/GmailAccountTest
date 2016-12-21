@@ -1,5 +1,7 @@
 package com.gmailsignUp.Gmailtest;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,22 +48,19 @@ public class SignUpProcessTest {
 
 		System.out.println("Provide DOB.");
 		WebElement BirthMonth=driver.findElement(By.id("BirthMonth"));
-//		Select selectBirthMonth = new Select(BirthMonth);
-//		selectBirthMonth.deselectAll();
-//		selectBirthMonth.selectByVisibleText("July");
-		BirthMonth.click();// //*[@id=":6"]/div
-		
-		driver.findElement(By.xpath("//td[@id='BirthMonth']/span[text()='July']")).click();
-		
-		WebElement birthday=driver.findElement(By.id("birthday-placeholder"));
+		BirthMonth.click();
+		driver.findElement(By.xpath("//*[@id=':7']/div")).click();
+				
+		//div[@title='Birthday']
+		WebElement birthday=driver.findElement(By.id("BirthDay"));
 		birthday.sendKeys("19");
 		WebElement BirthYear=driver.findElement(By.id("BirthYear"));
 		BirthYear.sendKeys("1991");
 		
 		System.out.println("Select Gender.");
 		WebElement Gender=driver.findElement(By.id("Gender"));
-		Select selectGender = new Select(Gender);
-		selectGender.selectByValue("Male");
+		Gender.click();	
+		driver.findElement(By.xpath("//*[@id=':f']/div")).click();
 
 		WebElement RecoveryPhoneNumber=driver.findElement(By.id("RecoveryPhoneNumber"));
 		RecoveryPhoneNumber.sendKeys("1991");
