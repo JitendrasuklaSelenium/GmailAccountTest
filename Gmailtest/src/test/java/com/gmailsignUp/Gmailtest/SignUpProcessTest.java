@@ -1,13 +1,9 @@
 package com.gmailsignUp.Gmailtest;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -51,7 +47,7 @@ public class SignUpProcessTest {
 		BirthMonth.click();
 		driver.findElement(By.xpath("//*[@id=':7']/div")).click();
 				
-		//div[@title='Birthday']
+		
 		WebElement birthday=driver.findElement(By.id("BirthDay"));
 		birthday.sendKeys("19");
 		WebElement BirthYear=driver.findElement(By.id("BirthYear"));
