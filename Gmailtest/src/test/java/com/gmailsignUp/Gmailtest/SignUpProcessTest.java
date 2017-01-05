@@ -1,23 +1,28 @@
 package com.gmailsignUp.Gmailtest;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import com.gmailsignUp.Gmailtest.FunctionLibrary;
 
 
 public class SignUpProcessTest {
 	 
 	//static WebDriverWait wait=new WebDriverWait(driver, 10);
-	
+	static FunctionLibrary fl=new FunctionLibrary();
 	@Test	
-	public static void OpenBrowser(){
-		String exepath="C:\\chromedriver.exe";
-		System.setProperty("webdriver.chrome.driver", exepath);
-		WebDriver driver =new ChromeDriver();
+	public static void TestSignup_wrongNumber() throws IOException {
+//		String exepath="C:\\chromedriver.exe";
+//		System.setProperty("webdriver.chrome.driver", exepath);
+//		WebDriver driver =new ChromeDriver();
+		fl.initData();
+		WebDriver driver=fl.initBrowser();
+		
 		System.out.println("Open Google page.");
 		driver.get ("https://accounts.google.com/");
 		driver.manage().window().maximize();
@@ -65,7 +70,7 @@ public class SignUpProcessTest {
 		WebElement submitbutton=driver.findElement(By.id("submitbutton"));
 		submitbutton.click();
 
-		
+		fl.closeBrowser();
 	}
 
 }

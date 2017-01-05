@@ -5,7 +5,7 @@
     <classes>
       <class name="com.gmailsignUp.Gmailtest.SignUpProcessTest">
         <methods>
-          <include name="OpenBrowser"/>
+          <include name="TestSignup_wrongNumber"/>
         </methods>
       </class> <!-- com.gmailsignUp.Gmailtest.SignUpProcessTest -->
     </classes>
