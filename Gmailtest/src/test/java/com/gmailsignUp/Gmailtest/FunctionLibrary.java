@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class FunctionLibrary {
 	
@@ -18,9 +19,8 @@ public class FunctionLibrary {
  //To Initialize .properties file.
  public void initData() throws IOException{
   SYSPARAM = new Properties();
-  FileInputStream Ist = new FileInputStream(System.getProperty("user.dir")+"//src//com//gmailsignUp//Gmailtest//SYSPARAM.properties");
-  SYSPARAM.load(Ist);
-  System.out.println(SYSPARAM.getProperty("BrowserToTestIn"));
+  FileInputStream Ist = new FileInputStream(System.getProperty("user.dir")+"//src//test//java//com//gmailsignUp//Gmailtest//SYSPARAM.properties");
+  SYSPARAM.load(Ist);  
  }
  
  public WebDriver initBrowser(){
@@ -28,8 +28,7 @@ public class FunctionLibrary {
   if(!browserAlreadyOpen){
    //Read value of 'BrowserToTestIn' key from SYSPARAM.properties file.
    //If key value Is MFF then execute If statement
-   //If key value Is CHRM then execute else statement.
-	  System.out.println(SYSPARAM.getProperty("BrowserToTestIn"));
+   //If key value Is CHRM then execute else statement.	 
    if(SYSPARAM.getProperty("BrowserToTestIn").equals("MFF")){
     driver = new FirefoxDriver();   
    }else if(SYSPARAM.getProperty("BrowserToTestIn").equals("CHRM")){
@@ -41,7 +40,7 @@ public class FunctionLibrary {
 	    //Write lines to open IE browser.
 	   String exepath="C:\\IEDriverServer.exe";
 	   System.setProperty("webdriver.IE.driver", exepath);
-	    driver = new ChromeDriver();
+	    driver = new InternetExplorerDriver();
 	   }
   driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
   driver.manage().window().maximize();
