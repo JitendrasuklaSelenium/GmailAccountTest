@@ -24,53 +24,55 @@ public class SignUpProcessTest {
 		WebDriver driver=fl.initBrowser();
 		
 		System.out.println("Open Google page.");
-		driver.get ("https://accounts.google.com/");
-		driver.manage().window().maximize();
-		WebElement signup=driver.findElement(By.xpath("//*[@id='link-signup']/a"));
-		signup.click();
-		WebElement CreatepageMessage=driver.findElement(By.xpath("//*[@id='wrapper']/div[2]/h1"));
-		Assert.assertEquals("Create your Google Account", CreatepageMessage.getText());
-		WebElement FirstName=driver.findElement(By.id("FirstName"));
 		
+		driver.get (fl.getProperty("URL"));
+		driver.manage().window().maximize();
+		WebElement signup=driver.findElement(fl.getbjectLocator("signup"));
+		signup.click();
+		WebElement CreatepageMessage=driver.findElement(fl.getbjectLocator("CreatepageMessage"));
+		Assert.assertEquals("Create your Google Account", CreatepageMessage.getText());
+				
 		System.out.println("Start filling SignUp form............");
+		WebElement FirstName=driver.findElement(fl.getbjectLocator("FirstName"));
 		FirstName.sendKeys("QATester01_FirstName");
-		WebElement LastName=driver.findElement(By.id("LastName"));
+		WebElement LastName=driver.findElement(fl.getbjectLocator("LastName"));
 		LastName.sendKeys("QATester01_LastName");
 		
 		System.out.println("Createing new UserID.");
-		WebElement GmailAddress=driver.findElement(By.id("GmailAddress"));
+		WebElement GmailAddress=driver.findElement(fl.getbjectLocator("GmailAddress"));
 		GmailAddress.sendKeys("JitendrakumarshuklaSelenium");
 		
 		System.out.println("Createing new Password.");
-		WebElement Passwd=driver.findElement(By.id("Passwd"));
+		WebElement Passwd=driver.findElement(fl.getbjectLocator("Passwd"));
 		Passwd.sendKeys("QATesterPasswd");
-		WebElement PasswdAgain=driver.findElement(By.id("PasswdAgain"));
+		WebElement PasswdAgain=driver.findElement(fl.getbjectLocator("PasswdAgain"));
 		PasswdAgain.sendKeys("QATesterPasswd");
 
 		System.out.println("Provide DOB.");
-		WebElement BirthMonth=driver.findElement(By.id("BirthMonth"));
+		WebElement BirthMonth=driver.findElement(fl.getbjectLocator("BirthMonth"));
 		BirthMonth.click();
-		driver.findElement(By.xpath("//*[@id=':7']/div")).click();
+//		driver.findElement(By.xpath("//*[@id=':7']/div")).click();
+		driver.findElement(fl.getbjectLocator("July")).click();
 				
 		
-		WebElement birthday=driver.findElement(By.id("BirthDay"));
+		WebElement birthday=driver.findElement(fl.getbjectLocator("BirthDay"));
 		birthday.sendKeys("19");
-		WebElement BirthYear=driver.findElement(By.id("BirthYear"));
+		WebElement BirthYear=driver.findElement(fl.getbjectLocator("BirthYear"));
 		BirthYear.sendKeys("1991");
 		
 		System.out.println("Select Gender.");
-		WebElement Gender=driver.findElement(By.id("Gender"));
+		WebElement Gender=driver.findElement(fl.getbjectLocator("Gender"));
 		Gender.click();	
-		driver.findElement(By.xpath("//*[@id=':f']/div")).click();
+		driver.findElement(fl.getbjectLocator("Male")).click();
 
-		WebElement RecoveryPhoneNumber=driver.findElement(By.id("RecoveryPhoneNumber"));
+		WebElement RecoveryPhoneNumber=driver.findElement(fl.getbjectLocator("RecoveryPhoneNumber"));
 		RecoveryPhoneNumber.sendKeys("1991");
-		WebElement RecoveryEmailAddress=driver.findElement(By.id("RecoveryEmailAddress"));
+		WebElement RecoveryEmailAddress=driver.findElement(fl.getbjectLocator("RecoveryEmailAddress"));
 		RecoveryEmailAddress.sendKeys("abc@gmail.com");
-		WebElement submitbutton=driver.findElement(By.id("submitbutton"));
+		WebElement submitbutton=driver.findElement(fl.getbjectLocator("submitbutton"));
 		submitbutton.click();
 
-		fl.closeBrowser();
+		//fl.closeBrowser();
 	}
 
 }
