@@ -8,4 +8,3 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
         format = {"html:format"})
 public class testRunner extends AbstractTestNGCucumberTests {
 }
-
