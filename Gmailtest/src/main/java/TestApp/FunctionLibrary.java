@@ -1,4 +1,4 @@
-package com.gmailsignUp.Gmailtest;
+package TestApp;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -50,8 +50,7 @@ public class FunctionLibrary {
     driver = new ChromeDriver();
    }else if(SYSPARAM.getProperty("BrowserToTestIn").equals("IE")){
 	    //Write lines to open IE browser.
-	   String exepath="C:\\IEDriverServer.exe";
-	   
+	   String exepath="C:\\IEDriverServer.exe";	   
 	   System.setProperty("webdriver.ie.driver", exepath);
 	    driver = new InternetExplorerDriver();
 	   }

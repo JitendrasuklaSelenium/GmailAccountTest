@@ -1,15 +1,14 @@
-package com.gmailsignUp.Gmailtest;
+package TestApp;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
-import com.gmailsignUp.Gmailtest.FunctionLibrary;
+
+import TestApp.FunctionLibrary;
 
 
 
@@ -87,7 +86,7 @@ public class SignUpProcessTest {
 		WebElement submitbutton=driver.findElement(fl.getbjectLocator("submitbutton"));
 		submitbutton.click();
 
-		//fl.closeBrowser();
+		fl.closeBrowser();
 	}
 
 }
